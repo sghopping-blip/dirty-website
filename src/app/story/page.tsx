@@ -16,37 +16,21 @@ export default function StoryPage() {
       <section className="relative overflow-hidden" style={{ minHeight: '70vh' }}>
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/story/founders-popup-01.jpg"
-            alt="Delainee and Madison at a Dirty pop-up event"
+            src="/images/story/founders-hero-01.jpg"
+            alt="Delainee and Madison — Co-Founders of Dirty"
             fill
             priority
-            className="object-cover object-top"
+            className="object-cover object-center"
             sizes="100vw"
           />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(44,26,18,0.20) 0%, rgba(44,26,18,0.55) 100%)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(44,26,18,0.15) 0%, rgba(44,26,18,0.50) 100%)' }} />
         </div>
         <div className="relative z-10 flex min-h-[70vh] flex-col items-start justify-end px-5 pb-16 container-default">
           <ScrollReveal>
             <p className="text-label text-cream/75 mb-4">Our Story</p>
             <h1 className="font-display-italic text-display-lg text-cream max-w-[600px]">
-              Built in SLO.<br />Served with intention.
+              From best friends<br />to Co-Founders.
             </h1>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Pull Quote */}
-      <section className="bg-cream section-padding-lg">
-        <div className="container-default">
-          <ScrollReveal>
-            <blockquote className="mx-auto max-w-[900px] text-center">
-              <p className="font-display-italic text-display-md text-espresso leading-tight">
-                &ldquo;We didn&apos;t open a store. We showed up where the people already were.&rdquo;
-              </p>
-              <footer className="mt-6 font-sans text-sm text-text-secondary">
-                — Delainee &amp; Madison, Co-Founders of Dirty
-              </footer>
-            </blockquote>
           </ScrollReveal>
         </div>
       </section>
@@ -74,12 +58,11 @@ export default function StoryPage() {
             </div>
           </ScrollReveal>
 
-          {/* Together photo */}
           <ScrollReveal delay={0.15} className="mt-14">
             <div className="relative overflow-hidden rounded-2xl aspect-[16/9] w-full">
               <Image
                 src="/images/story/founders-aprons-01.jpg"
-                alt="Delainee Fernandes and Madison Andrade — Co-Founders of Dirty"
+                alt="Delainee and Madison in their Dirty aprons"
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 768px) 100vw, 760px"
