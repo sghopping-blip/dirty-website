@@ -41,7 +41,7 @@ export default function EmailCapture() {
               Keep up with Dirty.
             </h2>
             <p className="mt-4 font-sans text-body-md text-text-secondary">
-              Weekly pop-up locations and new menu additions. You won&apos;t want to miss us.
+              New pop-ups and seasonal items.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1} className="mt-8">
