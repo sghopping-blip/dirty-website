@@ -36,7 +36,7 @@ export default function EmailCapture() {
       <div className="container-default">
         <div className="mx-auto max-w-[560px] text-center">
           <ScrollReveal>
-            <p className="text-label text-coral mb-4">Never Miss a Drop</p>
+            <p className="text-label text-coral mb-4">Never Miss a Dirty Drop.</p>
             <h2 className="font-display-italic text-display-sm text-espresso">
               Keep up with Dirty.
             </h2>
