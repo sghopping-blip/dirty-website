@@ -13,25 +13,29 @@ const welcomeEmailHtml = `
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Welcome to Dirty</title>
 </head>
-<body style="margin:0;padding:0;background-color:#FAF7F2;font-family:'Georgia',serif;">
+<body style="margin:0;padding:0;background-color:#FAF7F2;font-family:Georgia,serif;">
   <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#FAF7F2;">
     <tr>
       <td align="center" style="padding:0;">
         <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
 
+          <!-- Dark header with title -->
+          <tr>
+            <td style="background-color:#2C1A12;padding:40px 48px 32px;text-align:left;">
+              <p style="margin:0 0 8px;font-family:Georgia,serif;font-style:italic;font-size:13px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(250,247,242,0.6);">Est. 2025 · San Luis Obispo, CA</p>
+              <h1 style="margin:0;font-family:Georgia,serif;font-style:italic;font-size:48px;font-weight:400;color:#FAF7F2;line-height:1.1;">Welcome to Dirty.</h1>
+            </td>
+          </tr>
+
           <!-- Hero Image -->
           <tr>
-            <td style="padding:0;position:relative;">
+            <td style="padding:0;">
               <img
                 src="${SITE_URL}/images/email/welcome-hero.jpg"
                 alt="Dirty — Never Tasted This Good"
                 width="600"
-                style="width:100%;max-width:600px;display:block;object-fit:cover;object-position:center top;"
+                style="width:100%;max-width:600px;display:block;"
               />
-              <!-- Overlay text on image -->
-              <div style="position:absolute;top:0;left:0;right:0;padding:48px 40px 0;background:linear-gradient(to bottom, rgba(44,26,18,0.70) 0%, transparent 60%);">
-                <h1 style="margin:0;font-family:Georgia,serif;font-style:italic;font-size:52px;font-weight:400;color:#FAF7F2;line-height:1.1;">Welcome to Dirty.</h1>
-              </div>
             </td>
           </tr>
 
@@ -64,12 +68,8 @@ const welcomeEmailHtml = `
               <hr style="border:none;border-top:1px solid #F5E6DF;margin:0 0 32px;" />
 
               <!-- Sign off -->
-              <p style="margin:0 0 8px;font-family:Georgia,serif;font-style:italic;font-size:18px;color:#2C1A12;">
-                See you soon,
-              </p>
-              <p style="margin:0 0 32px;font-family:Georgia,serif;font-style:italic;font-size:18px;color:#2C1A12;">
-                Delainee &amp; Madison
-              </p>
+              <p style="margin:0 0 8px;font-family:Georgia,serif;font-style:italic;font-size:18px;color:#2C1A12;">See you soon,</p>
+              <p style="margin:0 0 32px;font-family:Georgia,serif;font-style:italic;font-size:18px;color:#2C1A12;">Delainee &amp; Madison</p>
               <p style="margin:0;font-family:Arial,sans-serif;font-size:13px;color:#A8916A;">
                 <a href="https://instagram.com/drinking.dirty" style="color:#E8523A;text-decoration:none;">@drinking.dirty</a>
                 &nbsp;·&nbsp;
@@ -84,7 +84,7 @@ const welcomeEmailHtml = `
               <p style="margin:0 0 8px;font-family:Georgia,serif;font-style:italic;font-size:20px;color:#FAF7F2;">Dirty.</p>
               <p style="margin:0 0 16px;font-family:Arial,sans-serif;font-size:11px;color:rgba(250,247,242,0.4);letter-spacing:0.1em;text-transform:uppercase;">Never Tasted This Good · San Luis Obispo, CA</p>
               <p style="margin:0;font-family:Arial,sans-serif;font-size:11px;color:rgba(250,247,242,0.3);">
-                You're receiving this because you signed up at dirty-website.vercel.app
+                You're receiving this because you signed up at drinkingdirtysoda.com
               </p>
             </td>
           </tr>
