@@ -13,7 +13,7 @@ const navItems = [
   { label: 'Our Story', href: '/story' },
   { label: 'Menu',      href: '/menu' },
   { label: 'Find Dirty', href: '/find' },
-  { label: 'Events',    href: '/events' },
+
   { label: 'Loyalty',   href: '/loyalty' },
   { label: 'FAQ',       href: '/faq' },
   { label: 'Contact',   href: '/contact' },
