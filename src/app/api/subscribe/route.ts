@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
+const AUDIENCE_ID = '10c69e05-6178-4d28-9932-02bcb01de424'
 
 export async function POST(req: NextRequest) {
   try {
@@ -12,15 +13,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Email required.' }, { status: 400 })
     }
 
-    await resend.emails.send({
-      from: process.env.FROM_EMAIL!,
-      to: process.env.OWNER_EMAIL!,
-      subject: `New Email Subscriber — ${email}`,
-      html: `
-        <h2>New Location Drop Subscriber</h2>
-        <p><strong>Email:</strong> ${email}</p>
-        <p>Add this person to your weekly location drop list.</p>
-      `,
+    await resend.contacts.create({
+      email,
+      audienceId: AUDIENCE_ID,
+      unsubscribed: false,
     })
 
     return NextResponse.json({ success: true }, { status: 200 })
