@@ -3,6 +3,8 @@ import Link from 'next/link'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import { StaggerGroup, StaggerItem } from '@/components/ui/ScrollReveal'
 import { getUpcomingEvents, eventTypeLabels } from '@/data/events'
+import { preOrderConfig } from '@/data/preorder'
+import FindPageClient from '@/components/find/FindPageClient'
 
 export const metadata: Metadata = {
   title: 'Find Dirty | Dirty',
@@ -20,6 +22,11 @@ function formatDate(dateStr: string): { weekday: string; month: string; day: str
 
 export default function FindPage() {
   const events = getUpcomingEvents()
+
+  const eventsWithPreOrder = events.map(e => ({
+    ...e,
+    preOrderEnabled: preOrderConfig[e.id] ?? true,
+  }))
 
   return (
     <>
@@ -48,39 +55,8 @@ export default function FindPage() {
             </p>
           </ScrollReveal>
 
-          {events.length > 0 ? (
-            <StaggerGroup className="flex flex-col divide-y divide-blush-dark">
-              {events.map((event) => {
-                const { weekday, month, day } = formatDate(event.date)
-                return (
-                  <StaggerItem key={event.id}>
-                    <div className="group flex flex-col gap-4 py-8 md:flex-row md:items-center md:gap-0 hover:bg-blush/30 -mx-6 px-6 rounded-xl transition-colors duration-200">
-                      <div className="flex items-baseline gap-3 md:w-32 shrink-0">
-                        <span className="font-display text-[3.5rem] leading-none text-espresso">{day}</span>
-                        <div className="flex flex-col">
-                          <span className="font-sans text-xs font-semibold text-text-secondary tracking-widest uppercase">{weekday.slice(0, 3)}</span>
-                          <span className="font-sans text-xs font-semibold text-text-secondary tracking-widest uppercase">{month.slice(0, 3)}</span>
-                        </div>
-                      </div>
-                      <div className="hidden md:block w-px h-16 bg-blush-dark mx-8 shrink-0" />
-                      <div className="flex-1">
-                        <p className="text-label text-coral mb-1">
-                          {event.isRecurring && event.recurringLabel ? event.recurringLabel : eventTypeLabels[event.type]}
-                        </p>
-                        <h3 className="font-sans font-medium text-xl text-espresso">{event.locationName}</h3>
-                        <p className="font-sans text-sm text-text-secondary mt-1">{event.address}</p>
-                        <p className="font-sans text-sm text-text-secondary mt-0.5">{event.startTime} – {event.endTime}</p>
-                      </div>
-                      <div className="shrink-0">
-                        <a href={event.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="btn-text-arrow text-sm">
-                          Get Directions
-                        </a>
-                      </div>
-                    </div>
-                  </StaggerItem>
-                )
-              })}
-            </StaggerGroup>
+          {eventsWithPreOrder.length > 0 ? (
+            <FindPageClient events={eventsWithPreOrder} />
           ) : (
             <div className="text-center py-20">
               <p className="font-display-italic text-display-sm text-text-secondary mb-4">
