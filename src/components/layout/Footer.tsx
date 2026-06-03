@@ -75,8 +75,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-label text-cream/50 mb-5">Stay in the Loop</p>
-            <p className="font-sans text-sm text-cream/70 leading-relaxed mb-4">Get weekly location drops before they go public.</p>
+            <p className="text-label text-cream/50 mb-5">Never Miss a Dirty Drop.</p>
+            <p className="font-sans text-sm text-cream/70 leading-relaxed mb-4">Keep up with Dirty. Weekly pop-up locations and new menu additions. You won't want to miss us.</p>
             <FooterEmailForm />
           </div>
         </div>
