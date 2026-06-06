@@ -27,15 +27,21 @@ export default function DrinkCarousel({ drinks, label, priceRange }: DrinkCarous
         className="flex gap-5 overflow-x-auto pb-6 px-6 md:px-[max(24px,calc((100vw-980px)/2))] scroll-smooth"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        {drinks.map((drink) => (
-          <div key={drink.id} className="flex-shrink-0 w-[240px] md:w-[280px] flex flex-col">
-            <div className="relative bg-cream rounded-2xl overflow-hidden mb-4" style={{ aspectRatio: '4/5' }}>
+        {drinks.map((drink) => {
+          const isPng = drink.id === 'island-time'
+          const imgSrc = '/images/drinks/' + drink.id + (isPng ? '.png' : '.jpg')
+          return (
+          <div key={drink.id} className="flex-shrink-0 w-[300px] md:w-[340px] flex flex-col">
+            <div
+              className={`relative overflow-hidden mb-4 ${isPng ? '' : 'bg-cream rounded-2xl'}`}
+              style={{ aspectRatio: '4/5' }}
+            >
               <Image
-                src={'/images/drinks/' + drink.id + '.jpg'}
+                src={imgSrc}
                 alt={drink.name}
                 fill
-                className="object-contain object-center p-4"
-                sizes="280px"
+                className="object-contain object-center"
+                sizes="340px"
               />
             </div>
             <div className="px-1">
@@ -44,7 +50,8 @@ export default function DrinkCarousel({ drinks, label, priceRange }: DrinkCarous
               <p className="font-sans text-sm text-text-secondary leading-relaxed">{drink.description}</p>
             </div>
           </div>
-        ))}
+          )
+        })}
       </div>
     </div>
   )
