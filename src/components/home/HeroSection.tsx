@@ -59,12 +59,12 @@ export default function HeroSection() {
 
         {/* Category Label */}
         <motion.p
-    className="text-label text-cream/80 mb-6 tracking-[0.20em] mt-16"
+          className="text-label text-cream/80 mb-6 tracking-[0.20em] mt-16"
           variants={textVariants(0.18)}
           initial="hidden"
           animate="visible"
         >
-          Handcrafted Dirty Soda&nbsp;·&nbsp;San Luis Obispo, CA
+          San Luis Obispo, CA
         </motion.p>
 
         {/* Main Headline */}
@@ -79,50 +79,18 @@ export default function HeroSection() {
           <span className="block">This Good.</span>
         </motion.h1>
 
-        {/* Sub-text */}
-        <motion.p
-          className="mt-6 max-w-[420px] font-sans text-body-lg text-cream/85 leading-relaxed"
+        {/* CTA Row */}
+        <motion.div
+          className="mt-10 flex items-center gap-6"
           variants={fadeVariants(0.52)}
           initial="hidden"
           animate="visible"
         >
-          Handcrafted dirty sodas found at SLO&apos;s best
-          farmers markets and events.
-        </motion.p>
-
-        {/* CTA Row */}
-        <motion.div
-          className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:gap-6"
-          variants={fadeVariants(0.68)}
-          initial="hidden"
-          animate="visible"
-        >
-          <Link href="/find" className="btn-text-arrow-inverse text-body-md font-medium">
+          <Link href="/find" className="btn-ghost-inverse">
             Find Us This Week
-          </Link>
-          <span className="hidden h-1 w-1 rounded-full bg-cream/40 sm:block" aria-hidden="true" />
-          <Link href="/events" className="btn-ghost-inverse">
-            Book an Event
           </Link>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator — pushed to bottom, won't overlap CTAs */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: 0.5, delay: 1.2 } }}
-        aria-hidden="true"
-      >
-        <div className="flex flex-col items-center gap-1.5">
-          <span className="font-sans text-[0.625rem] uppercase tracking-[0.18em] text-cream/50">
-            Scroll
-          </span>
-          <div className="h-8 w-[1.5px] overflow-hidden rounded-full bg-cream/20">
-            <div className="h-1/2 w-full animate-scroll-pulse rounded-full bg-cream/70" />
-          </div>
-        </div>
-      </motion.div>
     </section>
   )
 }
