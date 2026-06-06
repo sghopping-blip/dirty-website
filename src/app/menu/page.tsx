@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function MenuPage() {
   const signatures = menuItems.filter((d) => d.category === 'signature' && d.isAvailable)
   const bombers = menuItems.filter((d) => d.category === 'bomber' && d.isAvailable)
+  const seasonal = menuItems.filter((d) => d.category === 'seasonal' && d.isAvailable)
 
   return (
     <>
@@ -26,6 +27,49 @@ export default function MenuPage() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Seasonal Featured Drink */}
+      {seasonal.length > 0 && (
+        <section className="bg-[#D4854A] section-padding">
+          <div className="container-default">
+            {seasonal.map((drink) => (
+              <div key={drink.id} className="grid grid-cols-1 gap-10 md:grid-cols-2 items-center">
+                <ScrollReveal>
+                  <p className="text-label text-cream/70 mb-3">{drink.seasonalLabel} &nbsp;·&nbsp; Limited Time</p>
+                  <h2 className="font-display-italic text-display-md text-cream mb-4">{drink.name}</h2>
+                  <p className="font-sans text-body-lg text-cream/85 leading-relaxed mb-6">
+                    {drink.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {drink.flavorTags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-pill px-4 py-1.5 font-sans text-label bg-cream/20 text-cream"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="font-display-italic text-[1.25rem] text-cream/90 italic">
+                    &ldquo;Spend your summer the right way. Dirty.&rdquo;
+                  </p>
+                </ScrollReveal>
+                <ScrollReveal delay={0.1}>
+                  <div className="relative overflow-hidden rounded-2xl aspect-[4/5]">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#E8A060] to-[#C97C3A] flex items-center justify-center">
+                      <div className="text-center px-8">
+                        <p className="font-display-italic text-[5rem] leading-none text-cream/20 mb-4">✦</p>
+                        <p className="font-display-italic text-display-sm text-cream">Available Now</p>
+                        <p className="font-sans text-label text-cream/60 mt-2">At the Thursday Farmers Market</p>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="bg-white section-padding">
         <div className="container-default">

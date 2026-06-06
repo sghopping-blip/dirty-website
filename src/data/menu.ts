@@ -145,16 +145,16 @@ export const menuItems: DrinkItem[] = [
     isAvailable: true,
   },
   {
-    id: 'seasonal-special',
-    name: 'Seasonal Special',
+    id: 'the-golden-hour',
+    name: 'The Golden Hour',
     category: 'seasonal',
-    description: "We rotate limited-edition flavors throughout the year — from Valentine's Day pinks to St. Patrick's Day greens. Follow us to catch the drop.",
-    flavorTags: ['Changes seasonally', 'Follow @drinking.dirty'],
-    imagePath: '/images/drinks/drink-green-sunset.jpg',
-    isFeatured: false,
+    description: 'Sprite with peach, mango, and a coconut cream top. Warm, golden, and made for summer. Available while it lasts.',
+    flavorTags: ['Sprite', 'Peach', 'Mango', 'Coconut Cream'],
+    imagePath: '/images/drinks/lifestyle-ranch-01.jpg',
+    isFeatured: true,
     isSeasonal: true,
     isAvailable: true,
-    seasonalLabel: 'Limited Edition',
+    seasonalLabel: 'Summer 2026',
   },
 ]
 
