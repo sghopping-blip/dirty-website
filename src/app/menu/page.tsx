@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import { StaggerGroup, StaggerItem } from '@/components/ui/ScrollReveal'
+import DrinkCarousel from '@/components/menu/DrinkCarousel'
 import { menuItems } from '@/data/menu'
 
 export const metadata: Metadata = {
@@ -17,7 +18,6 @@ export default function MenuPage() {
 
   return (
     <>
-      {/* Hero */}
       <section className="bg-cream pt-40 pb-16">
         <div className="container-default text-center">
           <ScrollReveal>
@@ -30,7 +30,6 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* Seasonal Featured Drink */}
       {seasonal.length > 0 && (
         <section className="bg-[#D4854A] section-padding">
           <div className="container-default">
@@ -47,10 +46,7 @@ export default function MenuPage() {
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {drink.flavorTags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-pill px-4 py-1.5 font-sans text-label bg-cream/20 text-cream"
-                      >
+                      <span key={tag} className="rounded-pill px-4 py-1.5 font-sans text-label bg-cream/20 text-cream">
                         {tag}
                       </span>
                     ))}
@@ -73,58 +69,23 @@ export default function MenuPage() {
         </section>
       )}
 
-      {/* Signatures */}
-      <section className="bg-white section-padding">
-        <div className="container-default">
-          <ScrollReveal>
-            <div className="flex items-center gap-6 mb-12">
-              <h2 className="font-display text-display-sm text-espresso">Signatures</h2>
-              <div className="flex-1 h-px bg-blush-dark" />
-              <p className="text-label text-text-secondary shrink-0">$6.00 – $6.50</p>
-            </div>
-          </ScrollReveal>
-          <StaggerGroup className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {signatures.map((drink) => (
-              <StaggerItem key={drink.id}>
-                <div className="bg-cream rounded-xl p-7 hover:shadow-card transition-all duration-300 hover:-translate-y-1">
-                  <h3 className="font-display text-[1.75rem] text-espresso mb-2">{drink.name}</h3>
-                  <p className="text-label text-sage mb-4">{drink.flavorTags.join(' · ')}</p>
-                  <p className="font-sans text-body-md text-text-secondary leading-relaxed">{drink.description}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerGroup>
+      <section className="bg-white section-padding overflow-hidden">
+        <ScrollReveal>
+          <DrinkCarousel drinks={signatures} label="Signatures" priceRange="$6.00 – $6.50" />
+        </ScrollReveal>
+      </section>
+
+      <section className="bg-blush section-padding overflow-hidden">
+        <ScrollReveal>
+          <DrinkCarousel drinks={bombers} label="Bombers" priceRange="$7.00 – $7.50" />
+        </ScrollReveal>
+        <div className="container-default mt-6">
+          <p className="font-sans text-body-md text-text-secondary max-w-[480px]">
+            Red Bull base. A little extra energy, a lot more flavor.
+          </p>
         </div>
       </section>
 
-      {/* Bombers */}
-      <section className="bg-blush section-padding">
-        <div className="container-default">
-          <ScrollReveal>
-            <div className="flex items-center gap-6 mb-4">
-              <h2 className="font-display text-display-sm text-espresso">Bombers</h2>
-              <div className="flex-1 h-px bg-blush-dark" />
-              <p className="text-label text-text-secondary shrink-0">$7.00 – $7.50</p>
-            </div>
-            <p className="font-sans text-body-md text-text-secondary mb-12 max-w-[480px]">
-              Red Bull base. A little extra energy, a lot more flavor.
-            </p>
-          </ScrollReveal>
-          <StaggerGroup className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {bombers.map((drink) => (
-              <StaggerItem key={drink.id}>
-                <div className="bg-white rounded-xl p-7 hover:shadow-card transition-all duration-300 hover:-translate-y-1">
-                  <h3 className="font-display text-[1.75rem] text-espresso mb-2">{drink.name}</h3>
-                  <p className="text-label text-sage mb-4">{drink.flavorTags.join(' · ')}</p>
-                  <p className="font-sans text-body-md text-text-secondary leading-relaxed">{drink.description}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerGroup>
-        </div>
-      </section>
-
-      {/* Craft Your Own */}
       <section className="bg-cream section-padding">
         <div className="container-default">
           <ScrollReveal>
@@ -172,7 +133,6 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* Seasonal Specials */}
       <section className="bg-white section-padding-sm">
         <div className="container-default text-center">
           <ScrollReveal>
@@ -190,7 +150,6 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* Ready to order */}
       <section className="bg-blush section-padding-sm">
         <div className="container-default text-center">
           <ScrollReveal>
