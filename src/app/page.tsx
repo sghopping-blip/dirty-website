@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import HeroSection from '@/components/home/HeroSection'
-import NextEventBanner from '@/components/home/NextEventBanner'
 import FeaturedDrinks from '@/components/home/FeaturedDrinks'
 import FindUsTeaser from '@/components/home/FindUsTeaser'
 import LoyaltyStrip from '@/components/home/LoyaltyStrip'
@@ -21,7 +20,6 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <NextEventBanner />
       <FeaturedDrinks />
       <FindUsTeaser />
       <LoyaltyStrip />
