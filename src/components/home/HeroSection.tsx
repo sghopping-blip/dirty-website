@@ -81,13 +81,17 @@ export default function HeroSection() {
 
         {/* CTA Row */}
         <motion.div
-          className="mt-10 flex items-center gap-6"
+          className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:gap-6"
           variants={fadeVariants(0.52)}
           initial="hidden"
           animate="visible"
         >
           <Link href="/find" className="btn-ghost-inverse">
             Find Us This Week
+          </Link>
+          <span className="hidden h-1 w-1 rounded-full bg-cream/40 sm:block" aria-hidden="true" />
+          <Link href="/events" className="btn-ghost-inverse">
+            Book an Event
           </Link>
         </motion.div>
       </div>
