@@ -1,23 +1,14 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ui/ScrollReveal'
-import { StaggerGroup, StaggerItem } from '@/components/ui/ScrollReveal'
-import { getUpcomingEvents, eventTypeLabels } from '@/data/events'
+import { getUpcomingEvents } from '@/data/events'
 import { preOrderConfig } from '@/data/preorder'
 import FindPageClient from '@/components/find/FindPageClient'
 
 export const metadata: Metadata = {
   title: 'Find Dirty | Dirty',
   description: 'Find Dirty at SLO Thursday Night Farmers Market, SLO Ranch pop-ups, and private events. Updated every week.',
-}
-
-function formatDate(dateStr: string): { weekday: string; month: string; day: string } {
-  const date = new Date(dateStr + 'T12:00:00')
-  return {
-    weekday: date.toLocaleDateString('en-US', { weekday: 'long' }),
-    month: date.toLocaleDateString('en-US', { month: 'long' }),
-    day: date.getDate().toString(),
-  }
 }
 
 export default function FindPage() {
@@ -30,22 +21,42 @@ export default function FindPage() {
 
   return (
     <>
-      <section className="bg-cream pt-40 pb-16">
-        <div className="container-default text-center">
+      {/* Hero with background image */}
+      <section className="relative overflow-hidden" style={{ minHeight: '55vh' }}>
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/og-image.jpg"
+            alt="Find Dirty — San Luis Obispo"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to bottom, rgba(44,26,18,0.35) 0%, rgba(44,26,18,0.65) 100%)',
+            }}
+            aria-hidden="true"
+          />
+        </div>
+        <div className="relative z-10 flex flex-col items-center justify-end px-5 pb-16 container-default" style={{ minHeight: '55vh' }}>
           <ScrollReveal>
-            <p className="text-label text-coral mb-4">We Come to You</p>
-            <h1 className="font-display-italic text-display-lg text-espresso">Find Dirty.</h1>
-            <p className="mt-6 font-sans text-body-lg text-text-secondary max-w-[520px] mx-auto">
-              No storefront. No drive-through. We show up where the good things happen — updated every week.
+            <p className="text-label text-cream/75 mb-4">We Come to You</p>
+            <h1 className="font-display-italic text-display-lg text-cream">Find Dirty.</h1>
+            <p className="mt-4 font-sans text-body-lg text-cream/80 max-w-[520px]">
+              No storefront. We show up where the good things happen — updated every week.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
-      <section className="bg-white section-padding">
+      {/* Upcoming Events */}
+      <section className="bg-cream section-padding">
         <div className="container-default max-w-[860px]">
           <ScrollReveal>
-            <h2 className="font-display text-display-sm text-espresso mb-2">Upcoming Locations</h2>
+            <p className="text-label text-coral mb-3">Upcoming Locations</p>
+            <h2 className="font-display-italic text-display-md text-espresso mb-4">Where to find us.</h2>
             <p className="font-sans text-body-md text-text-secondary mb-12">
               Schedule updated every Monday. Follow{' '}
               <a href="https://instagram.com/drinking.dirty" target="_blank" rel="noopener noreferrer" className="text-coral hover:underline">
@@ -73,6 +84,7 @@ export default function FindPage() {
         </div>
       </section>
 
+      {/* Instagram */}
       <section className="bg-blush section-padding-sm">
         <div className="container-default">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 items-center">
@@ -96,6 +108,7 @@ export default function FindPage() {
         </div>
       </section>
 
+      {/* Email signup */}
       <section className="bg-cream section-padding-sm">
         <div className="container-default text-center max-w-[560px]">
           <ScrollReveal>
