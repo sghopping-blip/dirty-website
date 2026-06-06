@@ -25,7 +25,7 @@ export default function FindPage() {
       <section className="relative overflow-hidden" style={{ minHeight: '55vh' }}>
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/og-image.jpg"
+            src="/images/hero/find-hero-01.jpg"
             alt="Find Dirty — San Luis Obispo"
             fill
             priority
