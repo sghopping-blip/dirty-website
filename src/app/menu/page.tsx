@@ -17,13 +17,14 @@ export default function MenuPage() {
 
   return (
     <>
+      {/* Hero */}
       <section className="bg-cream pt-40 pb-16">
         <div className="container-default text-center">
           <ScrollReveal>
-            <p className="text-label text-sage mb-4">Handcrafted to Order</p>
+            <p className="text-label text-sage mb-4">San Luis Obispo, CA</p>
             <h1 className="font-display-italic text-display-lg text-espresso">The Menu</h1>
             <p className="mt-6 font-sans text-body-lg text-text-secondary max-w-[480px] mx-auto">
-              Every drink made fresh when you order. No shortcuts, no pre-made batches.
+              Eight signatures. Five bombers. Endless combinations. Made to order, every time.
             </p>
           </ScrollReveal>
         </div>
@@ -37,11 +38,14 @@ export default function MenuPage() {
               <div key={drink.id} className="grid grid-cols-1 gap-10 md:grid-cols-2 items-center">
                 <ScrollReveal>
                   <p className="text-label text-cream/70 mb-3">{drink.seasonalLabel} &nbsp;·&nbsp; Limited Time</p>
-                  <h2 className="font-display-italic text-display-md text-cream mb-4">{drink.name}</h2>
+                  <h2 className="font-display-italic text-display-md text-cream mb-2">{drink.name}</h2>
+                  <p className="font-display-italic text-[1.1rem] text-cream/80 mb-6">
+                    Spend your summer the right way. Dirty.
+                  </p>
                   <p className="font-sans text-body-lg text-cream/85 leading-relaxed mb-6">
                     {drink.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-8">
+                  <div className="flex flex-wrap gap-2">
                     {drink.flavorTags.map((tag) => (
                       <span
                         key={tag}
@@ -51,9 +55,6 @@ export default function MenuPage() {
                       </span>
                     ))}
                   </div>
-                  <p className="font-display-italic text-[1.25rem] text-cream/90 italic">
-                    &ldquo;Spend your summer the right way. Dirty.&rdquo;
-                  </p>
                 </ScrollReveal>
                 <ScrollReveal delay={0.1}>
                   <div className="relative overflow-hidden rounded-2xl aspect-[4/5]">
@@ -72,6 +73,7 @@ export default function MenuPage() {
         </section>
       )}
 
+      {/* Signatures */}
       <section className="bg-white section-padding">
         <div className="container-default">
           <ScrollReveal>
@@ -95,6 +97,7 @@ export default function MenuPage() {
         </div>
       </section>
 
+      {/* Bombers */}
       <section className="bg-blush section-padding">
         <div className="container-default">
           <ScrollReveal>
@@ -121,61 +124,64 @@ export default function MenuPage() {
         </div>
       </section>
 
-      <section className="bg-espresso section-padding">
+      {/* Craft Your Own */}
+      <section className="bg-cream section-padding">
         <div className="container-default">
-          <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
-            <ScrollReveal>
-              <p className="text-label text-coral mb-4">Craft Your Own</p>
-              <h2 className="font-display-italic text-display-md text-cream mb-6">Make it yours.</h2>
-              <p className="font-sans text-body-lg text-cream/80 leading-relaxed mb-8">
-                Start with a base, pick your syrups, add a creamer. Starting at $6 — includes soda and up to 4 syrups.
-              </p>
-              <div className="font-sans text-sm text-cream/60 space-y-1">
-                <p>Soda base: $5.00</p>
-                <p>Red Bull base: $6.00</p>
-                <p>Creamer add-on: +$0.50</p>
-                <p>Extra pump / extra syrup: +$0.50</p>
-              </div>
-            </ScrollReveal>
-            <StaggerGroup className="grid grid-cols-2 gap-8">
-              <StaggerItem>
-                <p className="text-label text-cream/50 mb-4">Base</p>
-                <ul className="font-sans text-sm text-cream/75 space-y-2">
+          <ScrollReveal>
+            <div className="flex items-center gap-6 mb-4">
+              <h2 className="font-display text-display-sm text-espresso">Craft Your Own</h2>
+              <div className="flex-1 h-px bg-blush-dark" />
+              <p className="text-label text-text-secondary shrink-0">From $6.00</p>
+            </div>
+            <p className="font-sans text-body-md text-text-secondary mb-12 max-w-[480px]">
+              Start with a base, pick your syrups, add a creamer. Creamer +$0.50 &nbsp;·&nbsp; Extra syrup +$0.50
+            </p>
+          </ScrollReveal>
+          <StaggerGroup className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <StaggerItem>
+              <div className="bg-white rounded-xl p-7">
+                <p className="text-label text-coral mb-5">Base</p>
+                <ul className="font-sans text-body-md text-text-secondary space-y-2">
                   {['Coca-Cola','Diet Coca-Cola','Dr. Pepper','Diet Dr. Pepper','Fresca','Orange Fanta','Root Beer','Sprite','Red Bull'].map((b) => (
                     <li key={b}>{b}</li>
                   ))}
                 </ul>
-              </StaggerItem>
-              <StaggerItem>
-                <p className="text-label text-cream/50 mb-4">Syrups</p>
-                <ul className="font-sans text-sm text-cream/75 space-y-2">
+              </div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="bg-white rounded-xl p-7">
+                <p className="text-label text-coral mb-5">Syrups</p>
+                <ul className="font-sans text-body-md text-text-secondary space-y-2">
                   {['Blue Raspberry','Cherry','Coconut','Lime','Mango','Peach','Pineapple','Pomegranate','Raspberry','Sour Candy','Strawberry','Sugar Free Vanilla','Vanilla','Watermelon'].map((s) => (
                     <li key={s}>{s}</li>
                   ))}
                 </ul>
-              </StaggerItem>
-              <StaggerItem className="col-span-2">
-                <p className="text-label text-cream/50 mb-4">Creamers</p>
-                <ul className="font-sans text-sm text-cream/75 flex gap-6 flex-wrap">
+              </div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="bg-white rounded-xl p-7">
+                <p className="text-label text-coral mb-5">Creamers</p>
+                <ul className="font-sans text-body-md text-text-secondary space-y-3">
                   {['Sweet & Creamy','Coconut Cream','French Vanilla'].map((c) => (
                     <li key={c}>{c}</li>
                   ))}
                 </ul>
-              </StaggerItem>
-            </StaggerGroup>
-          </div>
+              </div>
+            </StaggerItem>
+          </StaggerGroup>
         </div>
       </section>
 
-      <section className="bg-cream section-padding-sm">
+      {/* Seasonal Specials */}
+      <section className="bg-white section-padding-sm">
         <div className="container-default text-center">
           <ScrollReveal>
             <p className="text-label text-coral mb-4">Seasonal Specials</p>
             <h2 className="font-display-italic text-display-sm text-espresso mb-4">
-              We rotate limited flavors all year.
+              Something new is always coming.
             </h2>
             <p className="font-sans text-body-md text-text-secondary max-w-[480px] mx-auto mb-8">
-              From Valentine&apos;s Day pinks to St. Patrick&apos;s Day greens — follow us on Instagram to catch the latest drop before it&apos;s gone.
+              The Golden Hour is here for summer. Fall and holiday drops are already in the works — follow us so you hear it first.
             </p>
             <a href="https://instagram.com/drinking.dirty" target="_blank" rel="noopener noreferrer" className="btn-coral">
               Follow @drinking.dirty
@@ -184,12 +190,13 @@ export default function MenuPage() {
         </div>
       </section>
 
+      {/* Ready to order */}
       <section className="bg-blush section-padding-sm">
         <div className="container-default text-center">
           <ScrollReveal>
             <h2 className="font-display-italic text-display-sm text-espresso mb-6">Ready to order?</h2>
             <p className="font-sans text-body-md text-text-secondary mb-8">
-              We don&apos;t offer online ordering — find us in person and order fresh.
+              Come find us. Every drink is made to order, fresh, in person.
             </p>
             <Link href="/find" className="btn-coral">Find Us This Week</Link>
           </ScrollReveal>
