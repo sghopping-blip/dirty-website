@@ -41,19 +41,19 @@ export default function StoryPage() {
           <ScrollReveal>
             <p className="text-label text-sage mb-4">How It Started</p>
             <h2 className="font-display text-display-sm text-espresso mb-8">
-              From a break room to SLO&apos;s favorite pop-up.
+              We made the first one for ourselves.
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <div className="font-sans text-body-lg text-text-secondary leading-relaxed space-y-5">
               <p>
-                We&apos;ve pretty much done everything together — from growing up as dancers and showing dairy cattle against each other to becoming sorority sisters, roommates, and even interning at the same company.
+                We&apos;ve done pretty much everything together — competitive dance, dairy cattle shows, sorority rush, the same internship. So it tracks that we ended up starting a business together too.
               </p>
               <p>
-                During our internship, we&apos;d make dirty sodas in the break room just for fun — never thinking it would spark something bigger. But on a summer drive home together from SLO, Madison had an idea: what if we actually started our own dirty soda business?
+                It started in the break room. We were making dirty sodas for ourselves — just something to look forward to in the middle of the day. Then our coworkers wanted one. Then we couldn&apos;t stop thinking about it on the drive home.
               </p>
               <p>
-                From that moment on, we&apos;ve hit the ground running and never looked back. Now, we finally get to add business partners to our list of shared adventures.
+                Madison said it first: what if we actually did this? We&apos;ve been running ever since.
               </p>
             </div>
           </ScrollReveal>
@@ -99,7 +99,7 @@ export default function StoryPage() {
                   <p className="text-label text-coral mb-2">Co-Founder</p>
                   <h3 className="font-display text-display-sm text-espresso mb-4">Delainee Fernandes</h3>
                   <p className="font-sans text-body-md text-text-secondary leading-relaxed">
-                    I am a 4th year Ag Business Major with a Minor in Accounting from Tulare, California. I grew up doing competitive dance and cheer, while staying active in FFA through dairy cattle showing and judging. At Cal Poly, I am the outgoing VP of Membership Recruitment in Alpha Omicron Pi. This journey has already taught me so much, and I can&apos;t wait to keep learning and sharing it with you all!
+                    Ag Business, fourth year, Tulare girl. I grew up dancing, showing dairy cattle in FFA, and doing anything competitive I could find. At Cal Poly I ran membership recruitment for AOII — which, it turns out, is basically a crash course in sales. Dirty is the thing I&apos;m most proud of building.
                   </p>
                 </div>
               </div>
@@ -121,7 +121,7 @@ export default function StoryPage() {
                   <p className="text-label text-coral mb-2">Co-Founder</p>
                   <h3 className="font-display text-display-sm text-espresso mb-4">Madison Andrade</h3>
                   <p className="font-sans text-body-md text-text-secondary leading-relaxed">
-                    I am a third year Ag Business Major with a Minor in Entrepreneurship from Visalia, California. I grew up doing competitive dance and showing cattle in FFA, both of which have shaped me to be the person I am today. At Cal Poly I am Secretary of the ABM club as well as Director of Panhellenic Relations for Alpha Omicron Pi. Starting my own business has always been a dream of mine and I can&apos;t wait to share this journey with you all!
+                    Ag Business with a Minor in Entrepreneurship — which feels appropriate. I&apos;m from Visalia, grew up dancing and showing cattle, and came to Cal Poly with a goal to build something of my own. I didn&apos;t expect it to happen this fast or to taste this good.
                   </p>
                 </div>
               </div>
@@ -134,16 +134,16 @@ export default function StoryPage() {
       <section className="bg-cream section-padding">
         <div className="container-default">
           <ScrollReveal>
-            <p className="text-label text-coral mb-4 text-center">What Sets Us Apart</p>
+            <p className="text-label text-coral mb-4 text-center">What we&apos;re built on.</p>
             <h2 className="font-display-italic text-display-md text-espresso text-center mb-16">
-              Three things we never compromise on.
+              Three things we&apos;ve never cut corners on.
             </h2>
           </ScrollReveal>
           <StaggerGroup className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
-              { number: '01', title: 'Made to Order', body: 'Every drink is made fresh when you order it. No pre-made batches, no shortcuts. Just the real thing, every time.' },
-              { number: '02', title: 'Community First', body: 'We show up for SLO — at Thursday markets, campus events, ranch pop-ups, and the moments that matter most to this community.' },
-              { number: '03', title: 'Every Drink, an Experience', body: 'From the first sip to the last, we want every Dirty drink to be worth talking about. The presentation, the flavor, the moment.' },
+              { number: '01', title: 'Made to Order', body: 'You order it, we make it. Right then. No batches sitting around, no shortcuts. Every drink is the first one.' },
+              { number: '02', title: 'Community First', body: 'We&apos;re at the Thursday market every week. We show up for bid days, ranch pop-ups, backyard parties. If something is happening in SLO, we want to be there.' },
+              { number: '03', title: 'Every Drink, an Experience', body: 'The cream top matters. The cup matters. The way it looks when you hold it up matters. We care about the whole thing, not just the flavor.' },
             ].map((item) => (
               <StaggerItem key={item.number}>
                 <div className="text-center md:text-left">
