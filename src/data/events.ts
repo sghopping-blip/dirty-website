@@ -2,6 +2,32 @@ import type { DirtyEvent } from '@/types/events'
 
 export const events: DirtyEvent[] = [
   {
+    id: 'sean-hurley-private-jun-08',
+    title: "Sean Hurley's Favorite Class",
+    type: 'private',
+    date: '2026-06-08',
+    startTime: '1:00 PM',
+    endTime: '4:00 PM',
+    locationName: "Sean Hurley's Favorite Class",
+    address: 'San Luis Obispo, CA',
+    googleMapsUrl: 'https://maps.google.com/?q=San+Luis+Obispo+CA',
+    isPublic: false,
+    isRecurring: false,
+  },
+  {
+    id: 'bodyrok-popup-jun-13',
+    title: 'BodyRok Pop-Up',
+    type: 'pop-up',
+    date: '2026-06-13',
+    startTime: '11:00 AM',
+    endTime: '4:00 PM',
+    locationName: 'BodyRok Studio',
+    address: 'San Luis Obispo, CA',
+    googleMapsUrl: 'https://maps.google.com/?q=BodyRok+San+Luis+Obispo',
+    isPublic: true,
+    isRecurring: false,
+  },
+  {
     id: 'slo-farmers-market-thu-jun-04',
     title: 'SLO Thursday Night Farmers Market',
     type: 'farmers-market',
