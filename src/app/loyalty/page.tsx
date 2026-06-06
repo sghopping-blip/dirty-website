@@ -71,7 +71,7 @@ export default function LoyaltyPage() {
                 Every time you order a Dirty, ask for a punch on your loyalty card. Fill the card and your next drink is completely on us.
               </p>
               <p className="font-sans text-body-md text-cream/60">
-                No app. No account. Just a card and good taste.
+                A card, a punch, and a free drink waiting.
               </p>
             </ScrollReveal>
           </div>
