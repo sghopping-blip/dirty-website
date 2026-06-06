@@ -24,7 +24,7 @@ export default function MenuPage() {
             <p className="text-label text-sage mb-4">San Luis Obispo, CA</p>
             <h1 className="font-display-italic text-display-lg text-espresso">The Menu</h1>
             <p className="mt-6 font-sans text-body-lg text-text-secondary max-w-[480px] mx-auto">
-              Eight signatures. Five bombers. Endless combinations. Made to order, every time.
+              Discover your Dirty.
             </p>
           </ScrollReveal>
         </div>
