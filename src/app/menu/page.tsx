@@ -36,11 +36,22 @@ export default function MenuPage() {
             {seasonal.map((drink) => (
               <div key={drink.id} className="grid grid-cols-1 gap-10 md:grid-cols-2 items-center">
                 <ScrollReveal>
-                  <p className="text-label text-cream/70 mb-3">{drink.seasonalLabel} &nbsp;·&nbsp; Limited Time</p>
-                  <h2 className="font-display-italic text-display-md text-cream mb-2">{drink.name}</h2>
-                  <p className="font-display-italic text-[1.1rem] text-cream/80 mb-6">
+                  {/* Starburst badge */}
+                  <div className="inline-flex items-center gap-3 mb-6">
+                    <span className="text-cream text-xl">✦</span>
+                    <span className="font-sans text-sm font-bold tracking-[0.22em] uppercase text-cream/80">Limited Time</span>
+                    <span className="text-cream text-xl">✦</span>
+                  </div>
+
+                  {/* Big reveal headline */}
+                  <p className="font-sans text-xs font-bold tracking-[0.3em] uppercase text-cream/60 mb-3">Summer 2026</p>
+                  <h2 className="font-display-italic text-cream mb-2" style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)', lineHeight: 1.0 }}>
+                    The Golden Hour
+                  </h2>
+                  <p className="font-display-italic text-[1.15rem] text-cream/80 mb-8">
                     Spend your summer the right way. Dirty.
                   </p>
+
                   <p className="font-sans text-body-lg text-cream/85 leading-relaxed mb-6">
                     {drink.description}
                   </p>
