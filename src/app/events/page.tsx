@@ -17,7 +17,7 @@ export default function EventsPage() {
       <section className="relative overflow-hidden" style={{ minHeight: '80vh' }}>
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/events/event-setup-01.jpg"
+            src="/images/hero/hero-events-01.jpg"
             alt="Dirty event setup"
             fill
             priority
@@ -80,7 +80,7 @@ export default function EventsPage() {
           </ScrollReveal>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <ScrollReveal className="relative overflow-hidden rounded-2xl aspect-[4/3]">
-              <Image src="/images/events/event-setup-01.jpg" alt="Dirty event setup" fill className="object-cover hover:scale-[1.03] transition-transform duration-500" sizes="(max-width: 768px) 100vw, 50vw" />
+              <Image src="/images/hero/hero-events-01.jpg" alt="Dirty event setup" fill className="object-cover hover:scale-[1.03] transition-transform duration-500" sizes="(max-width: 768px) 100vw, 50vw" />
             </ScrollReveal>
             <ScrollReveal delay={0.1} className="relative overflow-hidden rounded-2xl aspect-[4/3]">
               <Image src="/images/events/event-crowd-01.jpg" alt="Customers at a Dirty pop-up" fill className="object-cover hover:scale-[1.03] transition-transform duration-500" sizes="(max-width: 768px) 100vw, 50vw" />
