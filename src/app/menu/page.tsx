@@ -103,8 +103,8 @@ export default function MenuPage() {
                     <div
                       className="absolute inset-0 rounded-full"
                       style={{
-                        background: 'radial-gradient(ellipse at center, rgba(255,210,120,0.55) 0%, rgba(232,160,80,0.25) 45%, transparent 72%)',
-                        transform: 'scale(1.1)',
+                        background: 'radial-gradient(ellipse at center, rgba(255,240,180,0.85) 0%, rgba(255,200,80,0.5) 35%, rgba(255,160,40,0.2) 60%, transparent 78%)',
+                        transform: 'scale(1.2)',
                       }}
                       aria-hidden="true"
                     />
