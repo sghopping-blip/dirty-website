@@ -34,17 +34,6 @@ export default function DirtyFoundersSection() {
 
   return (
     <div>
-      {/* Hero image */}
-      <div className="relative w-full overflow-hidden" style={{ aspectRatio: '16/7', minHeight: '280px' }}>
-        <Image
-          src="/images/story/founders-hero-01.jpg"
-          alt="Delainee and Madison — Co-Founders of Dirty"
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-      </div>
-
       {/* Wave: cream into coral */}
       <div style={{ display:'block', width:'100%', overflow:'hidden', lineHeight:0, marginBottom:'-2px' }}>
         <svg viewBox="0 0 1440 108" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style={{ display:'block', width:'100%' }}>
