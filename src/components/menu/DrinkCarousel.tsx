@@ -24,34 +24,27 @@ export default function DrinkCarousel({ drinks, label, priceRange }: DrinkCarous
       </div>
       <div
         ref={scrollRef}
-        className="flex gap-5 overflow-x-auto pb-6 px-6 md:px-[max(24px,calc((100vw-980px)/2))] scroll-smooth"
+        className="flex gap-6 overflow-x-auto pb-6 px-6 md:px-[max(24px,calc((100vw-980px)/2))] scroll-smooth"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        {drinks.map((drink) => {
-          const isPng = drink.id === 'island-time'
-          const imgSrc = '/images/drinks/' + drink.id + (isPng ? '.png' : '.jpg')
-          return (
-          <div key={drink.id} className="flex-shrink-0 w-[300px] md:w-[340px] flex flex-col">
-            <div
-              className={`relative overflow-hidden mb-4 ${isPng ? '' : 'bg-cream rounded-2xl'}`}
-              style={{ aspectRatio: '4/5' }}
-            >
+        {drinks.map((drink) => (
+          <div key={drink.id} className="flex-shrink-0 w-[280px] md:w-[320px] flex flex-col">
+            <div className="relative mb-4" style={{ aspectRatio: '3/4' }}>
               <Image
-                src={imgSrc}
+                src={'/images/drinks/' + drink.id + '.png'}
                 alt={drink.name}
                 fill
-                className="object-contain object-center"
-                sizes="340px"
+                className="object-contain object-bottom"
+                sizes="320px"
               />
             </div>
             <div className="px-1">
-              <h3 className="font-display text-[1.35rem] text-espresso mb-1">{drink.name}</h3>
+              <h3 className="font-display text-[1.5rem] text-espresso mb-1">{drink.name}</h3>
               <p className="text-label text-sage mb-2">{drink.flavorTags.join(' · ')}</p>
               <p className="font-sans text-sm text-text-secondary leading-relaxed">{drink.description}</p>
             </div>
           </div>
-          )
-        })}
+        ))}
       </div>
     </div>
   )
