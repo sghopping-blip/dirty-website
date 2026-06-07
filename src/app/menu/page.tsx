@@ -34,44 +34,49 @@ export default function MenuPage() {
         <section className="bg-[#D4854A] section-padding">
           <div className="container-default">
             {seasonal.map((drink) => (
-              <div key={drink.id} className="grid grid-cols-1 gap-10 md:grid-cols-2 items-center">
+              <div key={drink.id} className="flex flex-col items-center text-center max-w-[600px] mx-auto">
                 <ScrollReveal>
-                  {/* Starburst badge */}
-                  <div className="inline-flex items-center gap-3 mb-6">
-                    <span className="text-cream text-xl">✦</span>
-                    <span className="font-sans text-sm font-bold tracking-[0.22em] uppercase text-cream/80">Limited Time</span>
-                    <span className="text-cream text-xl">✦</span>
+                  {/* Limited time badge */}
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <span className="text-cream text-lg">✦</span>
+                    <span className="font-sans text-xs font-bold tracking-[0.22em] uppercase text-cream/70">Limited Time &nbsp;·&nbsp; Summer 2026</span>
+                    <span className="text-cream text-lg">✦</span>
                   </div>
 
-                  {/* Big reveal headline */}
-                  <p className="font-sans text-xs font-bold tracking-[0.3em] uppercase text-cream/60 mb-3">Summer 2026</p>
-                  <h2 className="font-display-italic text-cream mb-2" style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)', lineHeight: 1.0 }}>
-                    The Golden Hour
-                  </h2>
-                  <p className="font-display-italic text-[1.15rem] text-cream/80 mb-8">
+                  {/* Curved drink name above image */}
+                  <svg viewBox="0 0 400 120" className="w-full max-w-[480px] -mb-4" aria-hidden="true">
+                    <defs>
+                      <path id="curve" d="M 30,100 Q 200,10 370,100" />
+                    </defs>
+                    <text fill="rgba(250,247,242,0.95)" fontFamily="Georgia, serif" fontStyle="italic" fontSize="42" textAnchor="middle">
+                      <textPath href="#curve" startOffset="50%">The Golden Hour</textPath>
+                    </text>
+                  </svg>
+
+                  {/* Drink image */}
+                  <div className="relative w-full max-w-[420px]" style={{ aspectRatio: '3/4' }}>
+                    <Image
+                      src="/images/drinks/golden-hour.png"
+                      alt="The Golden Hour — Dirty Summer Seasonal"
+                      fill
+                      className="object-contain object-center drop-shadow-2xl"
+                      sizes="420px"
+                    />
+                  </div>
+
+                  {/* Description below */}
+                  <p className="font-display-italic text-[1.15rem] text-cream/80 mt-6 mb-4">
                     Spend your summer the right way. Dirty.
                   </p>
-
-                  <p className="font-sans text-body-lg text-cream/85 leading-relaxed mb-6">
+                  <p className="font-sans text-body-md text-cream/75 leading-relaxed mb-6 max-w-[440px]">
                     {drink.description}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 justify-center">
                     {drink.flavorTags.map((tag) => (
                       <span key={tag} className="rounded-pill px-4 py-1.5 font-sans text-label bg-cream/20 text-cream">
                         {tag}
                       </span>
                     ))}
-                  </div>
-                </ScrollReveal>
-                <ScrollReveal delay={0.1}>
-                  <div className="relative" style={{ aspectRatio: '3/4', minHeight: '480px' }}>
-                    <Image
-                      src="/images/drinks/golden-hour.png"
-                      alt="The Golden Hour — Dirty Summer Seasonal"
-                      fill
-                      className="object-contain object-bottom drop-shadow-2xl"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
                   </div>
                 </ScrollReveal>
               </div>
