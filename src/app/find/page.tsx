@@ -40,7 +40,7 @@ export default function FindPage() {
             aria-hidden="true"
           />
         </div>
-        <div className="relative z-10 flex flex-col items-center justify-end px-5 pb-16 container-default" style={{ minHeight: '55vh' }}>
+        <div className="relative z-10 flex flex-col items-center justify-center px-5 pb-16 container-default text-center" style={{ minHeight: '55vh' }}>
           <ScrollReveal>
             <p className="text-label text-cream/75 mb-4">We Come to You</p>
             <h1 className="font-display-italic text-display-lg text-cream">Find Dirty.</h1>
