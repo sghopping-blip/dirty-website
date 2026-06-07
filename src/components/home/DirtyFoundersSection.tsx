@@ -126,12 +126,7 @@ export default function DirtyFoundersSection() {
             >
               Find Us This Week
             </Link>
-            <Link
-              href="/story"
-              className="font-sans text-sm font-medium text-[#B33D28] hover:text-espresso transition-colors"
-            >
-              Full story →
-            </Link>
+            
           </div>
         </div>
       </section>

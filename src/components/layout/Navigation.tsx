@@ -10,7 +10,6 @@ import MobileMenu from './MobileMenu'
 import { cn } from '@/lib/utils'
 
 const navItems = [
-  { label: 'Our Story', href: '/story' },
   { label: 'Menu',      href: '/menu' },
   { label: 'Find Dirty', href: '/find' },
 
