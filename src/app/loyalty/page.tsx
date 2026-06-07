@@ -22,7 +22,7 @@ export default function LoyaltyPage() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover object-center"
           >
-            <source src="/videos/loyalty-hero.mp4" type="video/mp4" />
+            <source src="/videos/loyalty-hero-01.mp4" type="video/mp4" />
           </video>
           <div
             className="absolute inset-0"
