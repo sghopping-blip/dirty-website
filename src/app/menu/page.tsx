@@ -53,12 +53,12 @@ export default function MenuPage() {
                   </div>
                 </ScrollReveal>
                 <ScrollReveal delay={0.1}>
-                  <div className="relative overflow-hidden rounded-2xl aspect-[4/5]">
+                  <div className="relative" style={{ aspectRatio: '3/4', minHeight: '480px' }}>
                     <Image
-                      src="/images/drinks/golden-hour-01.jpg"
+                      src="/images/drinks/golden-hour.png"
                       alt="The Golden Hour — Dirty Summer Seasonal"
                       fill
-                      className="object-cover object-center"
+                      className="object-contain object-bottom drop-shadow-2xl"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
