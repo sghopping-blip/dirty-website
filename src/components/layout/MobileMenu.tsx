@@ -14,7 +14,6 @@ interface MobileMenuProps {
 
 // ── Nav Items ──────────────────────────────────────────────────────
 const navItems = [
-  { label: 'Our Story', href: '/story' },
   { label: 'Menu',      href: '/menu' },
   { label: 'Find Dirty', href: '/find' },
   { label: 'Events',    href: '/events' },

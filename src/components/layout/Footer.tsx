@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 const exploreLinks = [
-  { label: 'Our Story',  href: '/story' },
   { label: 'The Menu',   href: '/menu' },
   { label: 'Find Dirty', href: '/find' },
   { label: 'Events & Catering', href: '/events' },
