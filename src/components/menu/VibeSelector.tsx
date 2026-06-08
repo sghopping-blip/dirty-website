@@ -74,7 +74,7 @@ export default function VibeSelector({ sweetFruity, boldCreamy, classicClean }: 
               {q1.map((opt) => (
                 <button key={opt.key} onClick={() => setQ1Answer(opt.key)}
                   className="rounded-xl px-5 py-4 text-left border border-blush-dark bg-white hover:border-coral hover:shadow-card transition-all duration-200">
-                  <p className="font-display text-[1.05rem] text-espresso mb-0.5">{opt.label}</p>
+                  <p className="font-display text-[1.4rem] text-espresso mb-0.5">{opt.label}</p>
                   <p className="font-sans text-xs text-text-secondary">{opt.sub}</p>
                 </button>
               ))}
@@ -90,7 +90,7 @@ export default function VibeSelector({ sweetFruity, boldCreamy, classicClean }: 
               {(q2[q1Answer] ?? []).map((opt) => (
                 <button key={opt.a} onClick={() => setResult(opt.result)}
                   className="rounded-xl px-5 py-4 text-left border border-blush-dark bg-white hover:border-coral hover:shadow-card transition-all duration-200">
-                  <p className="font-display text-[1.05rem] text-espresso mb-0.5">{opt.a}</p>
+                  <p className="font-display text-[1.4rem] text-espresso mb-0.5">{opt.a}</p>
                   <p className="font-sans text-xs text-text-secondary">{opt.sub}</p>
                 </button>
               ))}
