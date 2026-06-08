@@ -191,7 +191,7 @@ export default function MenuPage() {
                   </div>
                   <div className="p-6">
                     <p className="font-sans text-xs font-semibold text-coral tracking-widest uppercase mb-2">
-                      Everyone&apos;s ordering this right now
+                      Hot at <span style={{color: '#E8523A'}}>Dirty</span> this week
                     </p>
                     <h3 className="font-display text-[1.5rem] text-espresso mb-1">{drink.name}</h3>
                     <p className="text-label text-sage mb-3">{drink.flavorTags.join(' · ')}</p>
