@@ -9,9 +9,23 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <>
+    <div className="relative">
+      {/* Fixed background image */}
+      <div className="fixed inset-0 z-0">
+        <img
+          src="/images/og-image.jpg"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-[rgba(250,247,242,0.88)]" />
+      </div>
+
+      {/* Page content */}
+      <div className="relative z-10">
+
       {/* Header */}
-      <section className="bg-cream pt-40 pb-16 text-center">
+      <section className="bg-transparent pt-40 pb-16 text-center">
         <div className="container-default">
           <ScrollReveal>
             <p className="text-label text-sage mb-4">Reach Out</p>
@@ -24,7 +38,7 @@ export default function ContactPage() {
       </section>
 
       {/* Pathway Split */}
-      <section className="bg-white section-padding">
+      <section className="bg-transparent section-padding">
         <div className="container-default max-w-[900px]">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <ScrollReveal>
@@ -52,7 +66,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form */}
-      <section id="contact-form" className="bg-blush section-padding">
+      <section id="contact-form" className="bg-transparent section-padding">
         <div className="container-default max-w-[640px]">
           <ScrollReveal>
             <p className="text-label text-coral mb-4">General Inquiry</p>
@@ -97,7 +111,7 @@ export default function ContactPage() {
       </section>
 
       {/* Social Links */}
-      <section className="bg-white section-padding-sm text-center">
+      <section className="bg-transparent section-padding-sm text-center">
         <div className="container-default max-w-[480px]">
           <ScrollReveal>
             <h2 className="font-display-italic text-display-sm text-espresso mb-8">
@@ -116,6 +130,7 @@ export default function ContactPage() {
           </ScrollReveal>
         </div>
       </section>
-    </>
+      </div>
+    </div>
   )
 }
