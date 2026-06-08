@@ -12,15 +12,24 @@ export default function EmailPopup() {
     const dismissed = localStorage.getItem('dirty_popup_dismissed')
     if (dismissed) return
 
-    function onScroll() {
-      if (window.scrollY > 200) {
-        setVisible(true)
-        window.removeEventListener('scroll', onScroll)
-      }
+    function show() {
+      setVisible(true)
+      window.removeEventListener('scroll', onScroll)
+      clearTimeout(fallback)
     }
 
+    function onScroll() {
+      if (window.scrollY > 100) show()
+    }
+
+    // Show on scroll OR after 8 seconds, whichever comes first
+    const fallback = setTimeout(show, 8000)
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      clearTimeout(fallback)
+    }
   }, [])
 
   function dismiss() {
@@ -49,17 +58,12 @@ export default function EmailPopup() {
 
   return (
     <div className="fixed inset-0 z-[500] flex items-end justify-center md:items-center px-4 pb-6 md:pb-0">
-      {/* Backdrop */}
       <div
         className="absolute inset-0 bg-espresso/50 backdrop-blur-sm"
         onClick={dismiss}
         aria-hidden="true"
       />
-
-      {/* Modal */}
       <div className="relative w-full max-w-[420px] bg-coral rounded-2xl overflow-hidden shadow-2xl">
-
-        {/* Close */}
         <button
           onClick={dismiss}
           className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/20 text-cream hover:bg-white/30 transition-colors text-lg leading-none"
@@ -67,7 +71,6 @@ export default function EmailPopup() {
         >
           ×
         </button>
-
         <div className="px-8 py-8">
           {!submitted ? (
             <>
@@ -78,9 +81,8 @@ export default function EmailPopup() {
                 Get Dirty before everyone else.
               </h2>
               <p className="font-sans text-sm text-cream/80 mb-6 leading-relaxed">
-                New pop-up locations every Monday. Seasonal drops before they sell out. Be the first in line.
+                New pop-up locations every Monday. Seasonal drops before they sell out. Be first in line.
               </p>
-
               <div className="flex gap-2">
                 <input
                   type="email"
@@ -100,7 +102,6 @@ export default function EmailPopup() {
                   {loading ? '...' : "I'm In"}
                 </button>
               </div>
-
               <button
                 onClick={dismiss}
                 className="block w-full text-center font-sans text-xs text-cream/50 mt-4 hover:text-cream transition-colors"
@@ -112,9 +113,7 @@ export default function EmailPopup() {
             <div className="text-center py-4">
               <p className="text-2xl mb-3">✦</p>
               <h3 className="font-display-italic text-[1.8rem] text-cream mb-2">You&apos;re in.</h3>
-              <p className="font-sans text-sm text-cream/80">
-                First location drop coming Monday.
-              </p>
+              <p className="font-sans text-sm text-cream/80">First location drop coming Monday.</p>
             </div>
           )}
         </div>
