@@ -11,8 +11,16 @@ export default function EmailPopup() {
   useEffect(() => {
     const dismissed = localStorage.getItem('dirty_popup_dismissed')
     if (dismissed) return
-    const timer = setTimeout(() => setVisible(true), 10000)
-    return () => clearTimeout(timer)
+
+    function onScroll() {
+      if (window.scrollY > 200) {
+        setVisible(true)
+        window.removeEventListener('scroll', onScroll)
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   function dismiss() {
