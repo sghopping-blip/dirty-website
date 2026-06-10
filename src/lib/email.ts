@@ -3,7 +3,7 @@ import { Resend } from 'resend'
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export const FROM_EMAIL = 'Dirty <hello@drinkingdirtysoda.com>'
-export const OWNER_EMAIL = process.env.OWNER_EMAIL || 'sghopping@gmail.com'
+export const OWNER_EMAIL = process.env.OWNER_EMAIL || 'drinkingdirty@gmail.com'
 export const SITE_URL = 'https://drinkingdirtysoda.com'
 
 interface SendEmailOptions {
